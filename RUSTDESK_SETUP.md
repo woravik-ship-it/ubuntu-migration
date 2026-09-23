@@ -145,7 +145,10 @@ Key           : ls7Y+iY4TauJqHLeOjwx+wO5PiYKf0vsYf56rMtOPQk=
 - **client ต่อไม่ติด / ค้างที่ “กำลังเชื่อมต่อ”**: ตรวจ `-k _` ว่าตั้งทั้ง hbbs+hbbr, คีย์ใน client ตรงกับ `id_ed25519.pub`, พอร์ตเปิด/forward ครบ, ดู `hbbs.log`
 - **อยากเปลี่ยนคีย์**: `sudo systemctl stop rustdesk-hbbs` → ลบ `/var/lib/rustdesk-server/id_ed25519*` → `sudo systemctl start rustdesk-hbbs` (คีย์ใหม่ → client ต้องอัปเดตทุกตัว)
 - **เห็นจอแต่ควบคุมไม่ได้ (Wayland)**: ฝั่งเครื่องที่ถูกควบคุมถ้าเป็น Wayland ต้องอนุญาตการแชร์จอผ่าน xdg-desktop-portal
-  · เครื่องนี้ปัจจุบัน (2026-09-23 23:18) ใช้ **lightdm + XFCE (X11)** ซึ่งรีโมทแบบเห็นจอได้สะดวกกว่า
-  (หมายเหตุ: GNOME บนเครื่องนี้เป็น **Wayland เท่านั้น** — session แบบ `ubuntu-xorg` ใช้ไม่ได้แล้ว,
+  · เครื่องนี้ (ตั้งแต่ 2026-09-23 23:36) ใช้ **GNOME/Wayland** — รีโมท RustDesk ที่รองรับ Wayland ต้องผ่าน
+  xdg-desktop-portal และบางกรณีควบคุมเมาส์/คีย์บอร์ดไม่ได้ (ข้อจำกัดของ Wayland)
+  · ทางสำรองที่รีโมทแบบเห็นจอได้แน่: TeamViewer / AnyDesk (รองรับ X11 และ Wayland ไม่ครบ),
+  `xrdp` (3389 → openbox แบบ X11 — XFCE ถูกลบไปแล้ว), `ssh` (22) และ Tailscale
+  (หมายเหตุ: GNOME บนเครื่องนี้เป็น **Wayland เท่านั้น** — session แบบ `ubuntu-xorg` ใช้ไม่ได้,
   ดูหัวข้อเดสก์ท็อปใน `E2_Lab/cline-bot/AGENTS.md`)
 - **hbbs ไม่ขึ้น**: `systemctl status rustdesk-hbbs` + ดู `hbbs.error` (มักเป็นพอร์ตชนหรือสิทธิ์เขียน `/var/lib/rustdesk-server`)
