@@ -10,6 +10,12 @@
 - **`desktop-look.sh`**: บันทึกและคืนค่าหน้าตา GNOME Desktop (`save` / `apply`) ได้แก่ dconf, extensions, วอลเปเปอร์, และปุ่มสลับภาษา
 - **`autorun-services.sh`**: ดู/ควบคุม บริการ user-level systemd ที่ autorun จากโปรเจกต์ (Cline Dashboard, Tunnel, Hub, Telegram)
 
+## คู่มือ (docs)
+
+- **`XRDP_SETUP.md`**: รีโมทหน้าจอด้วย XRDP + เดสก์ท็อป XFCE (แก้จอดำ/รีโมทไม่ติด)
+- **`RUSTDESK_SETUP.md`**: ติดตั้ง/ดูแล **RustDesk Server (self-hosted, hbbs + hbbr)** บนเครื่องนี้
+  (ID/relay ของตัวเอง, พอร์ต 21115-21119, คีย์บังคับ, วิธีตั้งค่าฝั่ง client + port forward สำหรับใช้จากนอกวง)
+
 ## บริการที่ Autorun จากโปรเจกต์ (systemd --user)
 
 ติดตั้งโดย repo ของแต่ละโปรเจกต์ (`E2_Lab/cline-dashboard/install-systemd.sh`, `E2_Lab/cline-bot/install-services.sh`)
