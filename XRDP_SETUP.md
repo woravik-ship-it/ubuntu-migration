@@ -1,5 +1,9 @@
 # Ubuntu Remote Desktop (XRDP & XFCE) Setup Guide
 
+> ⚠️ **สถานะ: 2026-09-23/24 เครื่องเปลี่ยนไปใช้ GNOME (Wayland) และลบ XFCE + openbox ทิ้งแล้วตามคำสั่งของผู้ใช้**
+> ผลคือ `/etc/xrdp/startwm.sh` (แก้ใหม่) จะปิด session ทันทีเมื่อมีคนเชื่อม RDP — ยังไม่มีเดสก์ท็อปบน X11 ในตอนนี้
+> ทางรีโมทหัวมี: TeamViewer · Tailscale(SSH) · บอท Telegram · ถ้าจะกลับไปใช้ RDP ให้ติดตั้ง `xfce4` กลับแล้วตามคู่มือนี้
+
 คู่มือการติดตั้งและตั้งค่าการรีโมทหน้าจอ (Remote Desktop) บน Ubuntu ด้วย **XRDP** และเดสก์ท็อป **XFCE** เพื่อแก้ปัญหาจอดำหรือรีโมทไม่สำเร็จ
 
 ---
