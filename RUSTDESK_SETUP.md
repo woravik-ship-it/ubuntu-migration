@@ -128,6 +128,16 @@ Key           : ls7Y+iY4TauJqHLeOjwx+wO5PiYKf0vsYf56rMtOPQk=
 - แนะนำตั้ง DDNS/โดเมนชี้มาที่บ้าน แล้วใส่โดเมนนั้นในช่อง ID Server (router เปลี่ยน IP น้อยลง)
 - ถ้าไม่ทำ port forward จะใช้ได้เฉพาะในวง LAN เดียวกัน
 
+> ⚠️ **ตรวจแล้ว 2026-09-23: ISP บ้านนี้ทำ NAT ซ้อน (CGNAT)** — WAN IP ของ router = `10.144.241.31/32`
+> (gateway `10.144.240.1`) ส่วน public IP `58.10.42.147` เป็นของ ISP ที่ใช้ร่วมกัน
+> ⇒ **ตั้ง port forward IPv4 ที่ router ไปก็ไม่ทำงาน** (ทดสอบจาก 3 โหนดนอกบ้านได้ `Connection timed out`)
+> ทางเลือกที่มีจริง:
+> 1. **Tailscale** (ติดตั้งบนเครื่องนี้แล้ว — ดู AGENTS.md) รีโมทผ่าน IP `100.x` ได้ทุกที่ ไม่ต้องพึ่ง router
+> 2. ขอ **public IPv4** จาก ISP (บางแพ็กเกจ/มีค่าใช้จ่าย) แล้ว port forward ที่ตั้งไว้จะกลับมาใช้ได้
+> 3. ใช้ **IPv6** (router ได้ PD `2001:fb1:15e:1c8f::/64`) + DDNS แบบ AAAA — ต้องเปิด IPv6 firewall/pinhole ที่ router และยังไม่ได้ทดสอบ inbound
+> 4. ใช้ RustDesk กับเซิร์ฟเวอร์สาธารณะของ RustDesk แทนการ self-host (ไม่ต้อง port forward เลย แต่ traffic ผ่านเซิร์ฟเวอร์เขา)
+
+
 ---
 
 ## 7. แก้ปัญหา (Troubleshooting)
